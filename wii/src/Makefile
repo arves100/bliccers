@@ -9,15 +9,13 @@ CC	=	$(PREFIX)gcc
 LD	=	$(PREFIX)gcc
 STRIP	=	./stripios
 
-D2X_CIOS_SRC = ../d2x-cios/source
-
 # Flags
 ARCH	=	-mcpu=arm926ej-s -mthumb -mthumb-interwork -mbig-endian
-CFLAGS	=	$(ARCH) -I. -I$(D2X_CIOS_SRC)/cios-lib -fomit-frame-pointer -Os -Wall -Wstrict-prototypes -ffunction-sections
+CFLAGS	=	$(ARCH) -I. -I../d2x-cios/source/cios-lib -Itinyehci -I../cios-lib -fomit-frame-pointer -Os -Wall -Wstrict-prototypes -ffunction-sections
 LDFLAGS	=	$(ARCH) -nostartfiles -Wl,-T,link.ld,-Map,$(TARGET).map -Wl,--gc-sections -Wl,-static
 
 # Libraries
-LIBS	=	$(D2X_CIOS_SRC)/cios-lib/cios-lib.a
+LIBS	=	../d2x-cios/source/cios-lib/cios-lib.a
 
 # Target
 TARGET	=	DIPP
