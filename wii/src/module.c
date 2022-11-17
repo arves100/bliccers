@@ -1,7 +1,7 @@
 /*
 	Custom IOS bricker
-
-	Copyright (C) 2019 Arves100.
+	2019
+	GPL2+
 */
 
 #include "syscalls.h"
